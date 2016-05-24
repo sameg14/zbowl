@@ -1,0 +1,3 @@
+register_players:
+    path: /register
+    defaults: { _controller: ApiBundle:Player:register }

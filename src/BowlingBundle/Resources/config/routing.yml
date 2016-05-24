@@ -1,3 +1,5 @@
 bowling_homepage:
     path:     /
     defaults: { _controller: BowlingBundle:Default:index }
+
+
