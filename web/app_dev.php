@@ -5,11 +5,10 @@ use Symfony\Component\Debug\Debug;
 
 umask(0000);
 
-
 /**
  * @var Composer\Autoload\ClassLoader $loader
  */
-$loader = require '/var/vendor/autoload.php';
+$loader = require __DIR__.'/../app/autoload.php';
 Debug::enable();
 
 $kernel = new AppKernel('dev', true);

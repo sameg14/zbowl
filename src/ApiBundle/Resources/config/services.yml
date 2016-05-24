@@ -1,4 +1,4 @@
 services:
-#    api.example:
-#        class: ApiBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    service.lane:
+        class: ApiBundle\Service\LaneService
+        arguments: ["@doctrine"]

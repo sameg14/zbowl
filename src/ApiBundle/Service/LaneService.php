@@ -26,8 +26,12 @@ class LaneService
         $this->laneRepo = $registry->getRepository('ApiBundle:Lane');
     }
 
+    /**
+     * Get all available lanes
+     * @return \ApiBundle\Entity\Lane[]
+     */
     public function getAllAvailableLanes()
     {
-
+        return $this->laneRepo->findBy(['isAvailable' => true]);
     }
 }

@@ -2,6 +2,30 @@
 
 {% block body %}
 
-    <a href="{{ path('ui_homepage') }}" class="btn-big-red" target="_blank">User Interface</a>
+
+    <div class="container col-lg-4">
+        <h3>Zebra Bowl</h3>
+
+        <form name="startGameForm" method="post" action="{{ path('start_game') }}">
+
+            <div class="form-group">
+                <label for="lane_id">Select Lane: </label>
+                <select id="lane_id" name="lane_id" class="form-control">
+                    {% for availableLane in availableLanes %}
+                        <option value="{{ availableLane.getId() }}">{{ availableLane.getName() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="player_names">Comma separated player names: </label>
+                <input type="text" name="player_names" id="player_names" class="form-control"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary pull-left">Start Game</button>
+
+        </form>
+    </div>
 
 {% endblock %}

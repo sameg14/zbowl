@@ -5,5 +5,9 @@ bowling_homepage:
 start_game:
     path: /start
     defaults: { _controller: BowlingBundle:Game:start }
+    methods: ['POST']
 
-
+game_page:
+    path: /game
+    defaults: { _controller: BowlingBundle:Game:play }
+    methods: ['GET']

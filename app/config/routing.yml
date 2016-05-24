@@ -1,7 +1,7 @@
-api:
-    resource: "@ApiBundle/Resources/config/routing.yml"
-    prefix:   /api
-
 bowling:
     resource: "@BowlingBundle/Resources/config/routing.yml"
     prefix:   /
+
+api:
+    resource: "@ApiBundle/Resources/config/routing.yml"
+    prefix:   /api

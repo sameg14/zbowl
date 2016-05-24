@@ -43,6 +43,7 @@ class Score
     private $frame;
 
     /**
+     * Is this a regular score or a strike [regular, strike]
      * @var string
      *
      * @ORM\Column(name="score_type", type="string", length=255)

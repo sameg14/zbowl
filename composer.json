@@ -1,5 +1,5 @@
 {
-    "name": "samirpatel/zebra_bowl_php",
+    "name": "Zebra bowl",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -28,7 +28,8 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "doctrine/annotations": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
