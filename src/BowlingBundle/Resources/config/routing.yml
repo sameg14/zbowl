@@ -1,5 +1,9 @@
 bowling_homepage:
     path:     /
-    defaults: { _controller: BowlingBundle:Default:index }
+    defaults: { _controller: BowlingBundle:Game:index }
+
+start_game:
+    path: /start
+    defaults: { _controller: BowlingBundle:Game:start }
 
 

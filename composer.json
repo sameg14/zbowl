@@ -16,9 +16,6 @@
             "Tests\\": "tests/"
         }
     },
-    "config" : {
-        "vendor-dir" : "/var/vendor"
-    },
     "require": {
         "php": ">=5.5.9",
         "symfony/symfony": "3.0.*",

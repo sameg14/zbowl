@@ -5,12 +5,12 @@ namespace ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Lane
+ * Player
  *
- * @ORM\Table(name="lane")
- * @ORM\Entity(repositoryClass="ApiBundle\Repository\LaneRepository")
+ * @ORM\Table(name="player")
+ * @ORM\Entity(repositoryClass="ApiBundle\Repository\PlayerRepository")
  */
-class Lane
+class Player
 {
     /**
      * @var int
@@ -29,11 +29,12 @@ class Lane
     private $name;
 
     /**
-     * @var bool
+     * @var \DateTime
      *
-     * @ORM\Column(name="is_available", type="boolean", nullable=true)
+     * @ORM\Column(name="date_created", type="datetime")
      */
-    private $isAvailable;
+    private $dateCreated;
+
 
     /**
      * Get id
@@ -50,7 +51,7 @@ class Lane
      *
      * @param string $name
      *
-     * @return Lane
+     * @return Player
      */
     public function setName($name)
     {
@@ -70,19 +71,27 @@ class Lane
     }
 
     /**
-     * @return boolean
+     * Set dateCreated
+     *
+     * @param \DateTime $dateCreated
+     *
+     * @return Player
      */
-    public function isIsAvailable()
+    public function setDateCreated($dateCreated)
     {
-        return $this->isAvailable;
+        $this->dateCreated = $dateCreated;
+
+        return $this;
     }
 
     /**
-     * @param boolean $isAvailable
+     * Get dateCreated
+     *
+     * @return \DateTime
      */
-    public function setIsAvailable($isAvailable)
+    public function getDateCreated()
     {
-        $this->isAvailable = $isAvailable;
+        return $this->dateCreated;
     }
 }
 

@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Zebra Bowl{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Zebra Bowl{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body {
+            background: #dbe6dd;
+            text-align: center;
+            -webkit-transform: translateZ(0);
+            font-family: Verdana;
+            color: #36393D;
+        }
+
+        .btn-big-red {
+            background-color: #C63702;
+            background-image: linear-gradient(167deg, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 55%), linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+            border-radius: 6px;
+            box-shadow: 0 0 0 1px #C63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AD3002, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+            color: #FFF;
+            display: inline-block;
+            font-family: "Lucida Grande", Arial, sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            height: 61px;
+            letter-spacing: -1px;
+            line-height: 61px;
+            margin: 30px 0 10px;
+            position: relative;
+            text-align: center;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+            text-decoration: none !important;
+            top: 0;
+            width: 186px;
+            -moz-transition: 0.15s;
+            -o-transition: 0.15s;
+            -webkit-transition: 0.15s;
+            transition: 0.15s;
+        }
+
+        .btn-big-red:hover, .btn-big-red:focus {
+            background-color: #D13902;
+            box-shadow: 0 0 0 1px #C63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 10px 0 0 #AD3002, 0 10px 0 1px rgba(0, 0, 0, 0.4), 0 10px 8px 1px rgba(0, 0, 0, 0.6);
+            top: -2px;
+        }
+
+        .btn-big-red:active {
+            box-shadow: 0 0 0 1px #AD3002 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+            -moz-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Zebra Bowl</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    {% block body %}{% endblock %}
+</div><!-- /.container -->
+
+{% block javascripts %}{% endblock %}
+</body>
 </html>
