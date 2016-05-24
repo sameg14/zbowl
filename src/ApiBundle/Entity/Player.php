@@ -21,6 +21,14 @@ class Player
      */
     private $id;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="game_id", type="integer", nullable=false)
+     */
+    private $gameId;
+
     /**
      * @var string
      *
@@ -92,6 +100,22 @@ class Player
     public function getDateCreated()
     {
         return $this->dateCreated;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGameId()
+    {
+        return $this->gameId;
+    }
+
+    /**
+     * @param mixed $gameId
+     */
+    public function setGameId($gameId)
+    {
+        $this->gameId = $gameId;
     }
 }
 

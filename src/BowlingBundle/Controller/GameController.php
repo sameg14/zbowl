@@ -3,6 +3,7 @@
 namespace BowlingBundle\Controller;
 
 use ApiBundle\Entity\Game;
+use ApiBundle\Entity\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -47,6 +48,8 @@ class GameController extends Controller
 
         if (empty($gameId) && empty($isGameActive)) {
 
+            $em = $this->getDoctrine()->getManager();
+
             $playerNames = $request->get('player_names');
             if (empty($playerNames)) {
                 throw new \Exception('Player names cannot be empty');
@@ -61,11 +64,30 @@ class GameController extends Controller
             $game->setLaneId($laneId);
             $game->setDateStarted(new \DateTime());
 
-            $this->getDoctrine()->getManager()->persist($game);
+            $em->persist($game);
+            $em->flush();
             $gameId = $game->getId();
 
             if (empty($gameId)) {
                 throw new \Exception('Game cannot be started');
+            }
+
+            // Mark this lane as used
+            $laneRepo = $this->getDoctrine()->getManager()->getRepository('ApiBundle:Lane');
+            $lane = $laneRepo->findOneBy(['id' => $laneId]);
+            $lane->setIsAvailable(false);
+            $em->persist($lane);
+            $em->flush();
+
+            // Create players and add them to the game
+            foreach ($players as $playerName) {
+                $playerName = trim($playerName);
+                $player = new Player();
+                $player->setGameId($gameId);
+                $player->setName($playerName);
+                $player->setDateCreated(new \DateTime());
+                $em->persist($player);
+                $em->flush();
             }
 
             $session->set('gameId', $gameId);
@@ -76,7 +98,11 @@ class GameController extends Controller
     }
 
 
+    /**
+     * We are ready to play the game
+     */
     public function playAction()
     {
+        return $this->render('BowlingBundle:Game:main.ui.html.twig');
     }
 }
