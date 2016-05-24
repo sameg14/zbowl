@@ -1,5 +1,48 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    asd
+    <div class="container col-lg-4">
+        <h3>Zebra Bowl</h3>
+
+        <div class="container">
+            <div class="col-lg-3">
+                <h4>Players</h4>
+                <table class="table table-responsive table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    {% for player in players %}
+                        <tr>
+                            <td>{{ player.getName()|capitalize }}</td>
+                            <td><span id="div_player_score_{{ player.getId() }}">0</span> points</td>
+                            <td>
+                                {% if activePlayer.getId() == player.getId() %}
+                                    <input type="button" class="btn btn-success"
+                                           id="btn_player_{{ player.getId() }}" value="Bowl">
+                                {% else %}
+                                    <input type="button" class="btn btn-default"
+                                           id="btn_player_{{ player.getId() }}" value="Bowl" disabled="disabled">
+                                {% endif %}
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-lg-9">
+                <h4>Score Card</h4>
+
+            </div>
+        </div>
+
+        // Display players here
+        // Display lane info
+        // Create rest endpoints:
+        // - get whose turn it is
+        // -
+    </div>
 {% endblock %}

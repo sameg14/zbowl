@@ -23,6 +23,8 @@ class Player
 
 
     /**
+     * Which active game does this player belong to?
+     *
      * @var int
      *
      * @ORM\Column(name="game_id", type="integer", nullable=false)
@@ -30,6 +32,8 @@ class Player
     private $gameId;
 
     /**
+     * What is this player's name
+     *
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
@@ -37,12 +41,13 @@ class Player
     private $name;
 
     /**
-     * @var \DateTime
+     * How strong of a bowler is this player. Range 1-10
      *
-     * @ORM\Column(name="date_created", type="datetime")
+     * @var int
+     *
+     * @ORM\Column(name="strength", type="integer", nullable=false)
      */
-    private $dateCreated;
-
+    private $strength;
 
     /**
      * Get id
@@ -79,30 +84,6 @@ class Player
     }
 
     /**
-     * Set dateCreated
-     *
-     * @param \DateTime $dateCreated
-     *
-     * @return Player
-     */
-    public function setDateCreated($dateCreated)
-    {
-        $this->dateCreated = $dateCreated;
-
-        return $this;
-    }
-
-    /**
-     * Get dateCreated
-     *
-     * @return \DateTime
-     */
-    public function getDateCreated()
-    {
-        return $this->dateCreated;
-    }
-
-    /**
      * @return mixed
      */
     public function getGameId()
@@ -116,6 +97,22 @@ class Player
     public function setGameId($gameId)
     {
         $this->gameId = $gameId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStrength()
+    {
+        return $this->strength;
+    }
+
+    /**
+     * @param int $strength
+     */
+    public function setStrength($strength)
+    {
+        $this->strength = $strength;
     }
 }
 

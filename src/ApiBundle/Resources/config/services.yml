@@ -2,3 +2,7 @@ services:
     service.lane:
         class: ApiBundle\Service\LaneService
         arguments: ["@doctrine"]
+
+    service.game:
+        class: ApiBundle\Service\GameService
+        arguments: ["@doctrine", "@session"]
