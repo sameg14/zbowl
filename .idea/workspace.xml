@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc45737f-2b09-4ce6-a84b-340d607e4552" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
     </list>
     <ignored path="zebra_bowl_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.5518395">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -83,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrameService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FrameService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82441473">
+            <state vertical-scroll-proportion="-20.541666">
               <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="e#37#52#0#PHP" expanded="true" />
@@ -94,6 +90,16 @@
                 <element signature="e#938#954#1#PHP" expanded="true" />
                 <element signature="e#1014#1030#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,16 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -163,8 +159,6 @@
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Lane.php" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160524154315.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/LaneService.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
@@ -186,6 +180,8 @@
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
       </list>
     </option>
   </component>
@@ -775,17 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="33" selection-start-line="63" selection-start-column="1" selection-end-line="67" selection-end-column="33" />
-          <folding>
-            <marker date="1464112535000" expanded="true" signature="1363:2270" placeholder="doctrine:" />
-            <marker date="1464112535000" expanded="true" signature="1932:2270" placeholder="orm:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -977,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.291666">
@@ -1003,7 +980,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82441473">
+        <state vertical-scroll-proportion="-20.541666">
           <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="e#37#52#0#PHP" expanded="true" />
@@ -1011,6 +988,22 @@
             <element signature="e#938#954#1#PHP" expanded="true" />
             <element signature="e#1014#1030#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5518395">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

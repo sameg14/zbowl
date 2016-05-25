@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
             new BowlingBundle\BowlingBundle(),
             new ApiBundle\ApiBundle(),
-//            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
