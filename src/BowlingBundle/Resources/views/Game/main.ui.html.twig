@@ -3,50 +3,54 @@
 {% block body %}
     <div class="container col-lg-12">
         <h3><span style="color:lightslategray">Zebra Bowl</span>
-            Frame {{ frameNumber }} being played on {{ lane.getName() }} by {{ activePlayer.getName()|capitalize }}</h3>
+            {% if frameNumber <= 10 %}
+                Frame {{ frameNumber }} Ball {{ ballNumber }}
+                by {{ activePlayer.getName()|capitalize }}
+            {% endif %}
+            <span class="pull-right"><a class="btn btn-danger" href="{{ path('logout') }}">x</a></span>
+        </h3>
+
         <hr/>
         <div class="container">
-            <div class="col-lg-3">
-                <h4>Players</h4>
-                <table class="table table-responsive table-striped">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Score</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    {% for player in players %}
-                        <tr>
-                            <td>{{ player.getName()|capitalize }}</td>
-                            <td><span id="div_player_score_{{ player.getId() }}">0</span> points</td>
-                            <td>
-                                <form name="throwBallForm" method="post" action="{{ path('throw_ball') }}">
-                                    <input type="hidden" name="player_id" value="{{ player.getId() }}"/>
-                                    {% if activePlayer.getId() == player.getId() %}
-                                        <input type="submit" class="btn btn-success"
-                                               id="btn_player_{{ player.getId() }}" value="Bowl">
-                                    {% else %}
-                                        <input type="button" class="btn btn-default"
-                                               id="btn_player_{{ player.getId() }}" value="Bowl" disabled="disabled">
-                                    {% endif %}
-                                </form>
 
-                            </td>
+            {% if frameNumber <= 10 %}
+                <div class="col-lg-3">
+                    <h4>Players</h4>
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Action</th>
                         </tr>
-                    {% endfor %}
-                </table>
-            </div>
-            <div class="col-lg-9">
+                        </thead>
+                        {% for player in players %}
+                            <tr>
+                                <td>{{ player.getName()|capitalize }}</td>
+                                <td><span id="div_player_score_{{ player.getId() }}">0</span> points</td>
+                                <td>
+                                    <form name="throwBallForm" method="post" action="{{ path('throw_ball') }}">
+                                        <input type="hidden" name="player_id" value="{{ player.getId() }}"/>
+                                        {% if activePlayer.getId() == player.getId() %}
+                                            <input type="submit" class="btn btn-success"
+                                                   id="btn_player_{{ player.getId() }}" value="Bowl">
+                                        {% else %}
+                                            <input type="button" class="btn btn-default"
+                                                   id="btn_player_{{ player.getId() }}" value="Bowl"
+                                                   disabled="disabled">
+                                        {% endif %}
+                                    </form>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+            <div class="{% if frameNumber <= 10 %}col-lg-9{% else %}col-lg-12{% endif %}">
                 <h4>Score Card</h4>
 
             </div>
         </div>
-
-        // Display players here
-        // Display lane info
-        // Create rest endpoints:
-        // - get whose turn it is
-        // -
     </div>
 {% endblock %}

@@ -16,3 +16,8 @@ throw_ball:
     path: /throw_ball
     defaults: { _controller: BowlingBundle:Game:throwBall }
     methods: ['POST']
+
+logout:
+    path: /logout
+    defaults: { _controller: BowlingBundle:Game:logout }
+    methods: ['GET']

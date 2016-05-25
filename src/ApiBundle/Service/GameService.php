@@ -243,7 +243,7 @@ class GameService
     {
         if (!isset($this->lastPlayerId)) {
             $players = $this->getPlayers();
-            $sizeofPlayers = sizeof($players);
+            $sizeofPlayers = sizeof($players) - 1;
             $lastPlayer = $players[$sizeofPlayers];
             $this->lastPlayerId = $lastPlayer->getId();
         }
@@ -275,6 +275,7 @@ class GameService
     {
         return $this->getGame()->getFrame();
     }
+
 
     /**
      * Is this game active
