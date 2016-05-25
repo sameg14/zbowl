@@ -11,3 +11,8 @@ game_page:
     path: /game
     defaults: { _controller: BowlingBundle:Game:play }
     methods: ['GET']
+
+throw_ball:
+    path: /throw_ball
+    defaults: { _controller: BowlingBundle:Game:throwBall }
+    methods: ['POST']

@@ -6,3 +6,7 @@ services:
     service.game:
         class: ApiBundle\Service\GameService
         arguments: ["@doctrine", "@session"]
+
+    service.frame:
+        class: ApiBundle\Service\FrameService
+        arguments: ["@doctrine", "@session"]

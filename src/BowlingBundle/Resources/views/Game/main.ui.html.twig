@@ -21,13 +21,16 @@
                             <td>{{ player.getName()|capitalize }}</td>
                             <td><span id="div_player_score_{{ player.getId() }}">0</span> points</td>
                             <td>
-                                {% if activePlayer.getId() == player.getId() %}
-                                    <input type="button" class="btn btn-success"
-                                           id="btn_player_{{ player.getId() }}" value="Bowl">
-                                {% else %}
-                                    <input type="button" class="btn btn-default"
-                                           id="btn_player_{{ player.getId() }}" value="Bowl" disabled="disabled">
-                                {% endif %}
+                                <form name="throwBallForm" method="post" action="{{ path('throw_ball') }}">
+                                    <input type="hidden" name="player_id" value="{{ player.getId() }}"/>
+                                    {% if activePlayer.getId() == player.getId() %}
+                                        <input type="submit" class="btn btn-success"
+                                               id="btn_player_{{ player.getId() }}" value="Bowl">
+                                    {% else %}
+                                        <input type="button" class="btn btn-default"
+                                               id="btn_player_{{ player.getId() }}" value="Bowl" disabled="disabled">
+                                    {% endif %}
+                                </form>
 
                             </td>
                         </tr>

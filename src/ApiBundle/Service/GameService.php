@@ -2,16 +2,17 @@
 
 namespace ApiBundle\Service;
 
-use ApiBundle\Entity\Frame;
-use ApiBundle\Repository\GameRepository;
-use ApiBundle\Repository\PlayerRepository;
 use \Exception;
 use ApiBundle\Entity\Lane;
 use ApiBundle\Entity\Game;
+use ApiBundle\Entity\Frame;
 use ApiBundle\Entity\Player;
-use Doctrine\Bundle\DoctrineBundle\Registry;
+use ApiBundle\Repository\GameRepository;
+use ApiBundle\Repository\PlayerRepository;
 use ApiBundle\Repository\LaneRepository;
+
 use Doctrine\ORM\EntityManager;
+use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**

@@ -74,4 +74,33 @@ class GameController extends Controller
             'frameNumber' => $gameService->getFrameNumber()
         ]);
     }
+
+    /**
+     * Throw a ball and knock over some pins
+     * @param Request $request
+     * @throws \Exception
+     * @return Response
+     */
+    public function throwBallAction(Request $request)
+    {
+        $playerId = $request->get('player_id');
+
+        $gameService = $this->get('service.game');
+        $activePlayer = $gameService->getActivePlayer();
+        if ($activePlayer->getId() != $playerId) {
+            throw new \Exception('UI PlayerId does not match active player, something is amiss');
+        }
+
+        $frameNumber = $gameService->getFrameNumber();
+
+        $frameService = $this->get('service.frame');
+        $playerFrame = $frameService->getFrameForPlayer($frameNumber, $playerId);
+        $ballNumber = $frameService->getBallNumber($playerFrame->getId());
+
+        $droppedPins = rand($activePlayer->getStrength(), 10);
+
+        $frameService->throwBall($playerFrame->getId(), $ballNumber, $droppedPins);
+
+        return $this->redirectToRoute('game_page');
+    }
 }
