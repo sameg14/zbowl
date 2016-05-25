@@ -49,7 +49,6 @@ class Frame
      */
     private $isActive;
 
-
     /**
      * Get id
      *

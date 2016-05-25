@@ -29,6 +29,15 @@ class Game
     private $laneId;
 
     /**
+     * The frame we are currently on
+     *
+     * @var int
+     *
+     * @ORM\Column(name="frame_id", type="integer")
+     */
+    private $frameId;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="is_active", type="boolean", nullable=true)
@@ -41,7 +50,6 @@ class Game
      * @ORM\Column(name="date_started", type="datetime")
      */
     private $dateStarted;
-
 
     /**
      * Get id
@@ -75,6 +83,22 @@ class Game
     public function getLaneId()
     {
         return $this->laneId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFrameId()
+    {
+        return $this->frameId;
+    }
+
+    /**
+     * @param int $frameId
+     */
+    public function setFrameId($frameId)
+    {
+        $this->frameId = $frameId;
     }
 
     /**
