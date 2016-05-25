@@ -62,6 +62,11 @@ class ScoreService
         $this->ballRepo = $this->em->getRepository('ApiBundle:Ball');
     }
 
+    public function getRawPinDataForEachPlayer()
+    {
+
+    }
+
 
     /**
      * @param $playerId
@@ -71,7 +76,7 @@ class ScoreService
     {
         $scores = [];
 
-        for($i = 0; $i < 10; $i++){
+        for ($i = 0; $i < 10; $i++) {
 
             $scores[$i] = array(
                 'ball1' => '',

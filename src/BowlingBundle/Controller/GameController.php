@@ -57,21 +57,28 @@ class GameController extends Controller
 
 
     /**
-     * We are ready to play the game
+     * We are ready to play the game. This is the main UI
      * @return Response
      */
     public function playAction()
     {
+        $frameService = $this->get('service.frame');
         $gameService = $this->get('service.game');
+
         $players = $gameService->getPlayers();
         $activePlayer = $gameService->getActivePlayer();
         $lane = $gameService->getLane();
+
+        $frameNumber = $gameService->getFrameNumber();
+        $playerFrame = $frameService->getFrameForPlayer($frameNumber, $activePlayer->getId());
+        $ballNumber = $frameService->getBallNumber($playerFrame->getId());
 
         return $this->render('BowlingBundle:Game:main.ui.html.twig', [
             'lane' => $lane,
             'players' => $players,
             'activePlayer' => $activePlayer,
-            'frameNumber' => $gameService->getFrameNumber()
+            'frameNumber' => $gameService->getFrameNumber(),
+            'ballNumber' => $ballNumber
         ]);
     }
 
@@ -97,10 +104,47 @@ class GameController extends Controller
         $playerFrame = $frameService->getFrameForPlayer($frameNumber, $playerId);
         $ballNumber = $frameService->getBallNumber($playerFrame->getId());
 
-        $droppedPins = rand($activePlayer->getStrength(), 10);
+        // If we are on the first ball, then the player's strength will count
+
+        if($ballNumber == 1){
+            $droppedPins = rand($activePlayer->getStrength(), 10);
+        }else{
+            // Otherwise figure out what they threw the last time, and rand 0-n from the rest of the pins
+            $firstFramePins = $frameService->getPins($playerFrame->getId(), $ballNumber);
+            $droppedPins = rand(0, $firstFramePins);
+        }
 
         $frameService->throwBall($playerFrame->getId(), $ballNumber, $droppedPins);
 
+        // Check to see if the player threw a strike, create another ball, with no pins dropped
+        if ($droppedPins == 10 && $ballNumber == 1) {
+            $frameService->throwBall($playerFrame->getId(), $ballNumber, 0);
+            $gameService->getNextPlayer();
+        }
+
+        // If this is the second ball, the player has completed their turn
+        if ($ballNumber == 2) {
+            $gameService->getNextPlayer();
+        }
+
+        // This is the last player, and their last ball, which means a new frame begins
+        if ($activePlayer->getId() == $gameService->getLastPlayerId() && $ballNumber == 2) {
+            $frameInc = $frameService->incrementFrame();
+        }
+
         return $this->redirectToRoute('game_page');
+    }
+
+    /**
+     * End the game
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function logoutAction()
+    {
+        $session = $this->get('session');
+        $session->clear();
+        $session->save();
+
+        return $this->redirectToRoute('bowling_homepage');
     }
 }
