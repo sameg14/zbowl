@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc45737f-2b09-4ce6-a84b-340d607e4552" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Service/GameService.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Service/GameService.php" />
     </list>
     <ignored path="zebra_bowl_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,36 +26,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/GameService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.375">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.47324416">
+              <caret line="243" column="48" selection-start-line="243" selection-start-column="48" selection-end-line="243" selection-end-column="48" />
               <folding>
-                <element signature="e#37#79#0#PHP" expanded="true" />
-                <element signature="e#1167#1183#1#PHP" expanded="true" />
-                <element signature="e#1274#1292#1#PHP" expanded="true" />
+                <element signature="e#37#64#0#PHP" expanded="true" />
+                <element signature="e#1332#1348#1#PHP" expanded="true" />
+                <element signature="e#1439#1457#1#PHP" expanded="true" />
+                <element signature="e#1511#1527#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.25">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5518395">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -69,47 +51,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Frame.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FrameService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.541666">
-              <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.166667">
+              <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="62" selection-end-column="7" />
               <folding>
                 <element signature="e#37#52#0#PHP" expanded="true" />
                 <element signature="e#861#878#1#PHP" expanded="true" />
                 <element signature="e#938#954#1#PHP" expanded="true" />
                 <element signature="e#1014#1030#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Player.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6666667">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,8 +81,8 @@
       <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.666667">
-              <caret line="60" column="30" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="30" />
+            <state vertical-scroll-proportion="-11.166667">
+              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
               <folding>
                 <element signature="e#44#89#0#PHP" expanded="true" />
                 <element signature="e#643#654#1#PHP" expanded="true" />
@@ -173,15 +125,15 @@
         <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig" />
         <option value="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
         <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Service/GameService.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Player.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Score.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Service/GameService.php" />
       </list>
     </option>
   </component>
@@ -902,17 +854,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
+    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160524154315.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.666667">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="30" />
-          <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-            <element signature="e#643#654#1#PHP" expanded="true" />
-            <element signature="e#917#961#0#PHP" expanded="true" />
-            <element signature="e#1519#1530#1#PHP" expanded="true" />
-            <element signature="e#1818#1856#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.27591974">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6666667">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5518395">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63826364">
+          <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -926,39 +896,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Player.php">
+    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160524154315.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27591974">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/GameService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.375">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
+        <state vertical-scroll-proportion="-11.166667">
+          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding>
-            <element signature="e#37#79#0#PHP" expanded="true" />
-            <element signature="e#1167#1183#1#PHP" expanded="true" />
-            <element signature="e#1274#1292#1#PHP" expanded="true" />
+            <element signature="e#44#89#0#PHP" expanded="true" />
+            <element signature="e#643#654#1#PHP" expanded="true" />
+            <element signature="e#917#961#0#PHP" expanded="true" />
+            <element signature="e#1519#1530#1#PHP" expanded="true" />
+            <element signature="e#1818#1856#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Game.php">
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.25">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.32608697">
+          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.166667">
+          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="62" selection-end-column="7" />
+          <folding>
+            <element signature="e#37#52#0#PHP" expanded="true" />
+            <element signature="e#861#878#1#PHP" expanded="true" />
+            <element signature="e#938#954#1#PHP" expanded="true" />
+            <element signature="e#1014#1030#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -970,40 +939,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.35117057">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/GameService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.541666">
-          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.47324416">
+          <caret line="243" column="48" selection-start-line="243" selection-start-column="48" selection-end-line="243" selection-end-column="48" />
           <folding>
-            <element signature="e#37#52#0#PHP" expanded="true" />
-            <element signature="e#861#878#1#PHP" expanded="true" />
-            <element signature="e#938#954#1#PHP" expanded="true" />
-            <element signature="e#1014#1030#1#PHP" expanded="true" />
+            <element signature="e#37#64#0#PHP" expanded="true" />
+            <element signature="e#1332#1348#1#PHP" expanded="true" />
+            <element signature="e#1439#1457#1#PHP" expanded="true" />
+            <element signature="e#1511#1527#1#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5518395">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>

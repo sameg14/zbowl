@@ -2,8 +2,11 @@
 
 namespace ApiBundle\Service;
 
+use ApiBundle\Entity\Frame;
+use ApiBundle\Repository\GameRepository;
 use ApiBundle\Repository\PlayerRepository;
 use \Exception;
+use ApiBundle\Entity\Lane;
 use ApiBundle\Entity\Game;
 use ApiBundle\Entity\Player;
 use Doctrine\Bundle\DoctrineBundle\Registry;
@@ -26,6 +29,11 @@ class GameService
      * @var Session
      */
     protected $session;
+
+    /**
+     * @var GameRepository
+     */
+    protected $gameRepo;
 
     /**
      * @var LaneRepository
@@ -61,6 +69,7 @@ class GameService
         $this->laneRepo = $registry->getRepository('ApiBundle:Lane');
         $this->session = $session;
         $this->playerRepo = $registry->getRepository('ApiBundle:Player');
+        $this->gameRepo = $registry->getRepository('ApiBundle:Game');
     }
 
     /**
@@ -89,6 +98,7 @@ class GameService
         $game = new Game();
         $game->setIsActive(true);
         $game->setLaneId($laneId);
+        $game->setFrame(1);
         $game->setDateStarted(new \DateTime());
 
         $this->em->persist($game);
@@ -106,14 +116,30 @@ class GameService
         $this->em->flush();
 
         // Create players and add them to the game
-        foreach ($players as $playerName) {
+        foreach ($players as $index => $playerName) {
+
             $playerName = trim($playerName);
+
             $player = new Player();
             $player->setGameId($gameId);
             $player->setName($playerName);
-            $player->setDateCreated(new \DateTime());
+            $player->setStrength(rand(4, 10));
             $this->em->persist($player);
+            $this->em->flush();
+
+            if ($index == 0) {
+                $firstPlayer = $player;
+            }
         }
+
+
+        // Create a new frame for the first player
+        $frame = new Frame();
+        $frame->setGameId($gameId);
+        $frame->setPlayerId(isset($firstPlayer) ? $firstPlayer->getId() : null);
+        $frame->setFrameNumber(1);
+        $frame->setIsActive(1);
+        $this->em->persist($frame);
         $this->em->flush();
 
         $this->session->set('gameId', $gameId);
@@ -198,11 +224,6 @@ class GameService
         return $this->players = $players;
     }
 
-    public function getCurrentFrame()
-    {
-
-    }
-
     /**
      * Get the numeric identifier for the last player
      * @return int
@@ -217,5 +238,22 @@ class GameService
         }
 
         return $this->lastPlayerId;
+    }
+
+    /**
+     * Get the lane this game is being planed on
+     * @throws Exception
+     * @return Lane
+     */
+    public function getLane()
+    {
+        $gameId = $this->session->get('gameId');
+        $game = $this->gameRepo->findOneBy(['id' => $gameId]);
+        $laneId = $game->getLaneId();
+        if (empty($laneId)) {
+            throw new Exception('No lane assigned to this game');
+        }
+
+        return $this->laneRepo->findOneBy(['id' => $laneId]);
     }
 }

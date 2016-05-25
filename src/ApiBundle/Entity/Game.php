@@ -33,9 +33,9 @@ class Game
      *
      * @var int
      *
-     * @ORM\Column(name="frame_id", type="integer")
+     * @ORM\Column(name="frame", type="integer", nullable=true)
      */
-    private $frameId;
+    private $frame;
 
     /**
      * @var bool
@@ -88,17 +88,17 @@ class Game
     /**
      * @return int
      */
-    public function getFrameId()
+    public function getFrame()
     {
-        return $this->frameId;
+        return $this->frame;
     }
 
     /**
-     * @param int $frameId
+     * @param int $frame
      */
-    public function setFrameId($frameId)
+    public function setFrame($frame)
     {
-        $this->frameId = $frameId;
+        $this->frame = $frame;
     }
 
     /**
