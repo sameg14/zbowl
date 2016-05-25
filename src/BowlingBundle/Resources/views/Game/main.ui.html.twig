@@ -1,9 +1,10 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    <div class="container col-lg-4">
-        <h3>Zebra Bowl</h3>
-
+    <div class="container col-lg-12">
+        <h3><span style="color:lightslategray">Zebra Bowl</span>
+            Frame {{ frameNumber }} being played on {{ lane.getName() }} by {{ activePlayer.getName()|capitalize }}</h3>
+        <hr/>
         <div class="container">
             <div class="col-lg-3">
                 <h4>Players</h4>

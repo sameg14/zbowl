@@ -3,6 +3,7 @@
 namespace BowlingBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -57,16 +58,20 @@ class GameController extends Controller
 
     /**
      * We are ready to play the game
+     * @return Response
      */
     public function playAction()
     {
         $gameService = $this->get('service.game');
         $players = $gameService->getPlayers();
         $activePlayer = $gameService->getActivePlayer();
+        $lane = $gameService->getLane();
 
         return $this->render('BowlingBundle:Game:main.ui.html.twig', [
+            'lane' => $lane,
             'players' => $players,
-            'activePlayer' => $activePlayer
+            'activePlayer' => $activePlayer,
+            'frameNumber' => $gameService->getFrameNumber()
         ]);
     }
 }

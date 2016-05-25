@@ -2,7 +2,6 @@
 
 namespace ApiBundle\Service;
 
-use \Exception;
 use ApiBundle\Entity\Frame;
 use ApiBundle\Repository\FrameRepository;
 use ApiBundle\Repository\BallRepository;
@@ -44,21 +43,4 @@ class FrameService
         $this->gameRepository = $registry->getRepository('ApiBundle:Game');
         $this->session = $session;
     }
-
-//    /**
-//     * The active frame being played in this game
-//     * @throws Exception
-//     * @return Frame
-//     */
-//    public function getActiveFrame()
-//    {
-//        $gameId = $this->session->get('gameId');
-//        $game = $this->gameRepository->findOneBy(['id' => $gameId, 'isActive' => true]);
-//        if (empty($game)) {
-//            throw new Exception('There is no active game being played');
-//        }
-//
-//
-//        return $this->frameRepository->findOneBy(['id' => $frameId]);
-//    }
 }

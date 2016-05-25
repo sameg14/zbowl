@@ -57,6 +57,17 @@ class GameService
      */
     protected $lastPlayerId;
 
+    /**
+     * Identifier of the current game being played
+     * @var int
+     */
+    protected $gameId;
+
+    /**
+     * Is this game active?
+     * @var bool
+     */
+    protected $isGameActive;
 
     /**
      * GameService constructor.
@@ -81,8 +92,8 @@ class GameService
      */
     public function startGame($playerNames, $laneId)
     {
-        $gameId = $this->session->get('gameId');
-        $isGameActive = $this->session->get('isGameActive');
+        $gameId = $this->getGameId();
+        $isGameActive = $this->isGameActive();
 
         // The game is already in progress
         if (!empty($gameId) && $isGameActive === true) {
@@ -132,7 +143,6 @@ class GameService
             }
         }
 
-
         // Create a new frame for the first player
         $frame = new Frame();
         $frame->setGameId($gameId);
@@ -177,8 +187,8 @@ class GameService
 
     /**
      * Attempt to get the next player
-     * @return Player
      * @throws Exception
+     * @return Player
      */
     public function getNextPlayer()
     {
@@ -214,7 +224,7 @@ class GameService
         }
 
         $players = $this->playerRepo->findBy(
-            ['gameId' => $this->session->get('gameId')],
+            ['gameId' => $this->getGameId()],
             ['id' => 'asc']
         );
         if (empty($players)) {
@@ -247,13 +257,59 @@ class GameService
      */
     public function getLane()
     {
-        $gameId = $this->session->get('gameId');
-        $game = $this->gameRepo->findOneBy(['id' => $gameId]);
+        $game = $this->getGame();
         $laneId = $game->getLaneId();
         if (empty($laneId)) {
             throw new Exception('No lane assigned to this game');
         }
 
         return $this->laneRepo->findOneBy(['id' => $laneId]);
+    }
+
+    /**
+     * Get the number of the current frame we are on
+     * @return int
+     */
+    public function getFrameNumber()
+    {
+        return $this->getGame()->getFrame();
+    }
+
+    /**
+     * Is this game active
+     * @return bool
+     */
+    public function isGameActive()
+    {
+        if (!isset($this->isGameActive)) {
+            $this->isGameActive = $this->session->get('isGameActive');
+        }
+
+        return $this->isGameActive;
+    }
+
+    /**
+     * Get the current game identifier of the game being played
+     * @return int|mixed
+     */
+    public function getGameId()
+    {
+        if (!isset($this->gameId)) {
+            $this->gameId = $this->session->get('gameId');
+        }
+
+        return $this->gameId;
+    }
+
+    /**
+     * Get the active game being played
+     * @return Game
+     */
+    public function getGame()
+    {
+        return $this->gameRepo->findOneBy([
+            'id' => $this->getGameId(),
+            'isActive' => true
+        ]);
     }
 }
