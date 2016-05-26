@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dc45737f-2b09-4ce6-a84b-340d607e4552" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" afterPath="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
     </list>
     <ignored path="zebra_bowl_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +51,8 @@
       <file leaf-file-name="ScoreService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7">
-              <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+            <state vertical-scroll-proportion="-1.6666666">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding>
                 <element signature="e#37#64#0#PHP" expanded="true" />
                 <element signature="e#1575#1593#1#PHP" expanded="true" />
@@ -66,8 +64,8 @@
       <file leaf-file-name="Frame.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.375">
-              <caret line="173" column="7" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+            <state vertical-scroll-proportion="-24.375">
+              <caret line="229" column="1" selection-start-line="229" selection-start-column="1" selection-end-line="229" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -175,8 +173,8 @@
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
       </list>
     </option>
   </component>
@@ -672,7 +670,7 @@
     <frame x="0" y="22" width="1366" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.260574" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22205438" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1146,16 +1144,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.375">
-          <caret line="173" column="7" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+        <state vertical-scroll-proportion="-24.375">
+          <caret line="229" column="1" selection-start-line="229" selection-start-column="1" selection-end-line="229" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7">
-          <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+        <state vertical-scroll-proportion="-1.6666666">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
             <element signature="e#37#64#0#PHP" expanded="true" />
             <element signature="e#1575#1593#1#PHP" expanded="true" />

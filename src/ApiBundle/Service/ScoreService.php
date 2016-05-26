@@ -81,18 +81,40 @@ class ScoreService
         $this->ballRepo = $this->em->getRepository('ApiBundle:Ball');
     }
 
+    /**
+     * @return array
+     */
     public function getScores()
     {
         $scores = [];
         $rawPinData = $this->getRawPinDataForEachPlayer();
 
+        $players = $this->getPlayers();
 
-        for ($i = 0; $i < 10; $i++) {
+        foreach ($players as $player) {
 
-
+            $frames = $rawPinData[$player->getName()];
+            $scores[$player->getName()] = $this->calculateScores($frames);
         }
 
         return $scores;
+    }
+
+    /**
+     * Calculate score for the current frame with the ability to look ahead
+     * This method will
+     *      - return an array frames with the `calculated` score per frame
+     *      - be called recursively when there is a strike
+     * @param Frame[] $allFrames
+     * @return array
+     */
+    protected function calculateScores($allFrames)
+    {
+        $scores = [];
+
+        foreach($allFrames as $frame){
+
+        }
     }
 
     /**

@@ -183,5 +183,48 @@ class Frame
     {
         $this->balls[] = $ball;
     }
-}
 
+    /**
+     * Get the total number of pins for this frame i.e. for both balls
+     * @return int
+     */
+    public function getPins()
+    {
+        if (!isset($this->balls) || empty($this->balls)) {
+            return 0;
+        } else {
+            $totalPins = 0;
+            foreach ($this->getBalls() as $ball) {
+                $totalPins += $ball->getPins();
+            }
+
+            return $totalPins;
+        }
+    }
+
+    /**
+     * A frame is a strike if the first ball knocked ten pins over
+     * @return bool
+     */
+    public function isStrike()
+    {
+        if (isset($this->balls) && empty($this->balls)) {
+            $ball = isset($this->balls[0]) ? $this->balls[0] : null;
+            if (!empty($ball)) {
+
+                return $ball->getPins() == 10 ? true : false;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * A frame is a spare if the total number of pins in both balls is ten
+     * @return bool
+     */
+    public function isSpare()
+    {
+        return !$this->isStrike() && $this->getPins() == 10;
+    }
+}
