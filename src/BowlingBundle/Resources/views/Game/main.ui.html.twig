@@ -11,7 +11,7 @@
         </h3>
 
         <hr/>
-        <div class="container">
+        <div class="container col-lg-12">
 
             {% if frameNumber <= 10 %}
                 <div class="col-lg-3">
@@ -20,14 +20,12 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Score</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         {% for player in players %}
                             <tr>
                                 <td>{{ player.getName()|capitalize }}</td>
-                                <td><span id="div_player_score_{{ player.getId() }}">0</span> points</td>
                                 <td>
                                     <form name="throwBallForm" method="post" action="{{ path('throw_ball') }}">
                                         <input type="hidden" name="player_id" value="{{ player.getId() }}"/>
@@ -49,6 +47,70 @@
             {% endif %}
             <div class="{% if frameNumber <= 10 %}col-lg-9{% else %}col-lg-12{% endif %}">
                 <h4>Score Card</h4>
+
+                {% if scores is not empty %}
+                    <table class="table-responsive table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Player</th>
+                            {% for i in 1..10 %}
+                                <th>{{ i }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for player in players %}
+
+                            {% if scores[player.getName()] is defined %}
+                                {% set playerScores = scores[player.getName()] %}
+                            {% else %}
+                                {% set playerScores = null %}
+                            {% endif %}
+                            <tr>
+                                <td>{{ player.getName()|capitalize }}</td>
+                                {% for i in 1..10 %}
+                                    <td>
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <!-- Ball 1 display score -->
+                                                <span class="pull-right"
+                                                      style="border:1px solid black; padding:3px; height:25px;width:25px;">
+                                                    {% if playerScores is defined and playerScores[i] is defined and playerScores[i]['frame'] is defined %}
+                                                        {{ playerScores[i]['frame'].getFirstBallDisplayScore() }}
+                                                    {% endif %}
+                                                </span>
+                                                </td>
+                                                <td>
+                                                    <!-- Ball 2 display score -->
+                                                <span class="pull-right"
+                                                      style="border:1px solid black; padding:3px; height:25px;width:25px;">
+                                                    {% if playerScores is defined and playerScores[i] is defined and playerScores[i]['frame'] is defined %}
+                                                        {{ playerScores[i]['frame'].getSecondBallDisplayScore() }}
+                                                    {% endif %}
+                                                </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                <span style="font-weight: bolder; font-size: larger;">
+                                                    {% if playerScores is defined and playerScores[i]['score'] is defined  and playerScores[i]['score'] > 0 %}
+                                                        {{ playerScores[i]['score'] }}
+                                                    {% endif %}
+                                                </span>
+                                                </td>
+                                                <td></td>
+
+                                            </tr>
+                                        </table>
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
 
             </div>
         </div>

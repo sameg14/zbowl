@@ -185,6 +185,43 @@ class Frame
     }
 
     /**
+     * Get the first balls display score
+     * @return mixed
+     */
+    public function getFirstBallDisplayScore()
+    {
+        if (empty($this->balls)) {
+            return null;
+        }
+        if ($this->isStrike()) {
+            return 'X';
+        }
+        if (isset($this->balls[0])) {
+            return $this->balls[0]->getPins();
+        }
+    }
+
+    /**
+     * Get the first balls display score
+     * @return mixed
+     */
+    public function getSecondBallDisplayScore()
+    {
+        if (empty($this->balls)) {
+            return null;
+        }
+        if ($this->isStrike()) {
+            return null;
+        }
+        if($this->isSpare()){
+            return '/';
+        }
+        if (isset($this->balls[1])) {
+            return $this->balls[1]->getPins();
+        }
+    }
+
+    /**
      * Get the total number of pins for this frame i.e. for both balls
      * @return int
      */
@@ -208,11 +245,12 @@ class Frame
      */
     public function isStrike()
     {
-        if (isset($this->balls) && empty($this->balls)) {
+        if (isset($this->balls) && !empty($this->balls)) {
+
             $ball = isset($this->balls[0]) ? $this->balls[0] : null;
             if (!empty($ball)) {
 
-                return $ball->getPins() == 10 ? true : false;
+                return $ball->getPins() == Game::MAX_PINS ? true : false;
             }
         }
 
@@ -225,6 +263,6 @@ class Frame
      */
     public function isSpare()
     {
-        return !$this->isStrike() && $this->getPins() == 10;
+        return !$this->isStrike() && $this->getPins() == Game::MAX_PINS;
     }
 }

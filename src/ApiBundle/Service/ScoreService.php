@@ -4,14 +4,15 @@ namespace ApiBundle\Service;
 
 use ApiBundle\Entity\Frame;
 use ApiBundle\Entity\Player;
+use ApiBundle\Repository\GameRepository;
+use ApiBundle\Repository\LaneRepository;
+use ApiBundle\Repository\BallRepository;
+use ApiBundle\Repository\FrameRepository;
 use ApiBundle\Repository\PlayerRepository;
+
 use Doctrine\ORM\EntityManager;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Component\HttpFoundation\Session\Session;
-use ApiBundle\Repository\GameRepository;
-use ApiBundle\Repository\FrameRepository;
-use ApiBundle\Repository\LaneRepository;
-use ApiBundle\Repository\BallRepository;
 
 /**
  * Class ScoreService gets scores for players in realtime
@@ -93,8 +94,15 @@ class ScoreService
 
         foreach ($players as $player) {
 
+            /** @var Frame[] $frames */
             $frames = $rawPinData[$player->getName()];
-            $scores[$player->getName()] = $this->calculateScores($frames);
+            foreach ($frames as $frame) {
+
+                $scores[$player->getName()][$frame->getFrameNumber()] = [
+                    'score' => $this->calculateScore($frame, $frames),
+                    'frame' => $frame,
+                ];
+            }
         }
 
         return $scores;
@@ -105,16 +113,46 @@ class ScoreService
      * This method will
      *      - return an array frames with the `calculated` score per frame
      *      - be called recursively when there is a strike
+     * @param Frame $frame The current frame being considered
      * @param Frame[] $allFrames
-     * @return array
+     * @return int
+     * @todo: Implement this algorithm and ensure look ahead and recursion
      */
-    protected function calculateScores($allFrames)
+    protected function calculateScore($frame, $allFrames)
     {
-        $scores = [];
+        $score = null;
 
-        foreach($allFrames as $frame){
+        if ($frame->isStrike()) {
 
+            $score = $frame->getPins();
+
+            // Get the score for the next frame
+            foreach ($allFrames as $idx => $allFrame) {
+
+                if ($allFrame->getId() == $frame->getId() && isset($allFrames[$idx + 1])) {
+                    $nextAvailableFrame = $allFrames[$idx + 1];
+                    $score += $this->calculateScore($nextAvailableFrame, $allFrames);
+                }
+            }
+        } elseif ($frame->isSpare()) {
+
+            $score = $frame->getPins();
+            foreach ($allFrames as $idx => $allFrame) {
+
+                if ($allFrame->getId() == $frame->getId() && isset($allFrames[$idx + 1])) {
+                    $nextAvailableFrame = $allFrames[$idx + 1];
+                    $balls = $nextAvailableFrame->getBalls();
+                    if (!empty($balls) && isset($balls[0])) {
+                        $firstNextFrameBall = $balls[0];
+                        $score += $firstNextFrameBall->getPins();
+                    }
+                }
+            }
+        } else {
+            $score = $frame->getPins();
         }
+
+        return $score;
     }
 
     /**

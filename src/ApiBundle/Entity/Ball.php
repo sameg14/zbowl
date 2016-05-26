@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Ball
 {
+    const FIRST = 1;
+
+    const SECOND = 2;
+
     /**
      * @var int
      *

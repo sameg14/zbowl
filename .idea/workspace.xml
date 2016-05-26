@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc45737f-2b09-4ce6-a84b-340d607e4552" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Repository/GameRepository.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Repository/GameRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" afterPath="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig" afterPath="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
     </list>
     <ignored path="zebra_bowl_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,12 +33,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new.game.page.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig">
+      <file leaf-file-name="ScoreService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
-              <folding />
+            <state vertical-scroll-proportion="0.80833334">
+              <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
+              <folding>
+                <element signature="e#37#64#0#PHP" expanded="true" />
+                <element signature="e#1576#1594#1#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,24 +49,13 @@
       <file leaf-file-name="main.ui.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.75">
+              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
               <folding>
-                <element signature="e#416#422#0#Twig" expanded="true" />
-                <element signature="e#1342#1352#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScoreService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6666666">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-              <folding>
-                <element signature="e#37#64#0#PHP" expanded="true" />
-                <element signature="e#1575#1593#1#PHP" expanded="true" />
+                <element signature="e#3402#3421#0#HTML" expanded="true" />
+                <element signature="e#3798#3866#0#HTML" expanded="true" />
+                <element signature="e#4574#4642#0#HTML" expanded="true" />
+                <element signature="e#5307#5354#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,43 +64,8 @@
       <file leaf-file-name="Frame.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.375">
-              <caret line="229" column="1" selection-start-line="229" selection-start-column="1" selection-end-line="229" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-              <folding>
-                <marker date="1464221220000" expanded="true" signature="0:436" placeholder="services:" />
-                <marker date="1464221220000" expanded="true" signature="220:326" placeholder="service.frame:" />
-                <marker date="1464221220000" expanded="true" signature="331:436" placeholder="service.score:" />
-                <marker date="1464221220000" expanded="true" signature="400:436" placeholder="arguments:" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25">
-              <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state vertical-scroll-proportion="-16.875">
+              <caret line="216" column="23" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -109,11 +74,45 @@
       <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.625">
+              <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
               <folding>
-                <element signature="e#44#89#0#PHP" expanded="true" />
-                <element signature="e#4984#5002#1#PHP" expanded="true" />
+                <element signature="e#44#70#0#PHP" expanded="true" />
+                <element signature="e#2439#2477#0#PHP" expanded="true" />
+                <element signature="e#5213#5231#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_dev.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config_dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <marker date="1464240775000" expanded="true" signature="41:268" placeholder="framework:" />
+                <marker date="1464240775000" expanded="true" signature="56:268" placeholder="router:" />
               </folding>
             </state>
           </provider>
@@ -122,14 +121,9 @@
       <file leaf-file-name="FrameService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.75">
-              <caret line="161" column="1" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
-              <folding>
-                <element signature="e#1054#1071#1#PHP" expanded="false" />
-                <element signature="e#1131#1147#1#PHP" expanded="false" />
-                <element signature="e#1207#1223#1#PHP" expanded="false" />
-                <marker date="1464220365000" expanded="true" signature="454:4347" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="145" column="103" selection-start-line="145" selection-start-column="103" selection-end-line="145" selection-end-column="103" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,7 +146,6 @@
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160524154315.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/LaneService.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/autoload.php" />
         <option value="$PROJECT_DIR$/app/functions.php" />
@@ -161,20 +154,23 @@
         <option value="$PROJECT_DIR$/web/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Player.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Score.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
         <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/GameService.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig" />
-        <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Repository/GameRepository.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Game.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php" />
+        <option value="$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php" />
+        <option value="$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php" />
+        <option value="$PROJECT_DIR$/web/app_dev.php" />
+        <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
+        <option value="$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig" />
       </list>
     </option>
   </component>
@@ -670,7 +666,7 @@
     <frame x="0" y="22" width="1366" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22205438" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19864048" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -698,7 +694,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2613293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.094410874" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -726,21 +722,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="100" selection-start-line="23" selection-start-column="100" selection-end-line="23" selection-end-column="100" />
           <folding>
-            <element signature="e#416#422#0#Twig" expanded="true" />
-            <element signature="e#1342#1352#0#Twig" expanded="true" />
+            <element signature="e#416#422#0#Twig" expanded="false" />
+            <element signature="e#1203#1213#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -758,8 +746,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-            <element signature="e#4984#5002#1#PHP" expanded="true" />
+            <element signature="e#44#70#0#PHP" expanded="true" />
+            <element signature="e#2439#2477#0#PHP" expanded="true" />
+            <element signature="e#5213#5231#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,10 +758,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding>
-            <element signature="e#1054#1071#1#PHP" expanded="false" />
-            <element signature="e#1131#1147#1#PHP" expanded="false" />
-            <element signature="e#1207#1223#1#PHP" expanded="false" />
-            <marker date="1464220365000" expanded="true" signature="454:4347" placeholder="{...}" />
+            <element signature="e#37#64#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -800,8 +786,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="100" selection-start-line="23" selection-start-column="100" selection-end-line="23" selection-end-column="100" />
           <folding>
-            <element signature="e#416#422#0#Twig" expanded="true" />
-            <element signature="e#1342#1352#0#Twig" expanded="true" />
+            <element signature="e#416#422#0#Twig" expanded="false" />
+            <element signature="e#1203#1213#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -819,8 +805,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-            <element signature="e#4984#5002#1#PHP" expanded="true" />
+            <element signature="e#44#70#0#PHP" expanded="true" />
+            <element signature="e#2439#2477#0#PHP" expanded="true" />
+            <element signature="e#5213#5231#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -830,10 +817,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding>
-            <element signature="e#1054#1071#1#PHP" expanded="false" />
-            <element signature="e#1131#1147#1#PHP" expanded="false" />
-            <element signature="e#1207#1223#1#PHP" expanded="false" />
-            <marker date="1464220365000" expanded="true" signature="454:4347" placeholder="{...}" />
+            <element signature="e#37#64#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -926,13 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -997,29 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63826364">
-          <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6304348">
-          <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Repository/GameRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34666666">
@@ -1032,14 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34666666">
           <caret line="176" column="20" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34666666">
-          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1062,14 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09615385">
@@ -1078,85 +1016,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Repository/GameRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.275">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.375">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Ball.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.375">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.125">
+          <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.36057693">
           <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <marker date="1464221220000" expanded="true" signature="0:436" placeholder="services:" />
-            <marker date="1464221220000" expanded="true" signature="220:326" placeholder="service.frame:" />
-            <marker date="1464221220000" expanded="true" signature="331:436" placeholder="service.score:" />
-            <marker date="1464221220000" expanded="true" signature="400:436" placeholder="arguments:" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-            <element signature="e#4984#5002#1#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.25">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52884614">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/FrameService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.75">
-          <caret line="161" column="1" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
-          <folding>
-            <element signature="e#1054#1071#1#PHP" expanded="false" />
-            <element signature="e#1131#1147#1#PHP" expanded="false" />
-            <element signature="e#1207#1223#1#PHP" expanded="false" />
-            <marker date="1464220365000" expanded="true" signature="454:4347" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/new.game.page.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="145" column="103" selection-start-line="145" selection-start-column="103" selection-end-line="145" selection-end-column="103" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#416#422#0#Twig" expanded="true" />
-            <element signature="e#1342#1352#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Entity/Frame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.375">
-          <caret line="229" column="1" selection-start-line="229" selection-start-column="1" selection-end-line="229" selection-end-column="1" />
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="216" column="23" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Controller/GameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.625">
+          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding>
+            <element signature="e#44#70#0#PHP" expanded="true" />
+            <element signature="e#2439#2477#0#PHP" expanded="true" />
+            <element signature="e#5213#5231#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="32" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1464240775000" expanded="true" signature="41:268" placeholder="framework:" />
+            <marker date="1464240775000" expanded="true" signature="56:268" placeholder="router:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BowlingBundle/Resources/views/Game/main.ui.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <folding>
+            <element signature="e#3402#3421#0#HTML" expanded="true" />
+            <element signature="e#3798#3866#0#HTML" expanded="true" />
+            <element signature="e#4574#4642#0#HTML" expanded="true" />
+            <element signature="e#5307#5354#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Service/ScoreService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6666666">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.80833334">
+          <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
           <folding>
             <element signature="e#37#64#0#PHP" expanded="true" />
-            <element signature="e#1575#1593#1#PHP" expanded="true" />
+            <element signature="e#1576#1594#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

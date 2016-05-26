@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Game
 {
+    const MAX_PINS = 10;
+
     /**
      * @var int
      *

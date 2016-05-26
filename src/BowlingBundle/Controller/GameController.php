@@ -2,8 +2,11 @@
 
 namespace BowlingBundle\Controller;
 
+use ApiBundle\Entity\Ball;
+use ApiBundle\Entity\Game;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -55,7 +58,6 @@ class GameController extends Controller
         return $this->redirectToRoute('game_page');
     }
 
-
     /**
      * We are ready to play the game. This is the main UI
      * @return Response
@@ -97,43 +99,45 @@ class GameController extends Controller
         $playerId = $request->get('player_id');
 
         $gameService = $this->get('service.game');
+        $frameService = $this->get('service.frame');
+
         $activePlayer = $gameService->getActivePlayer();
         if ($activePlayer->getId() != $playerId) {
             throw new \Exception('UI PlayerId does not match active player, something is amiss');
         }
 
         $frameNumber = $gameService->getFrameNumber();
-
-        $frameService = $this->get('service.frame');
         $playerFrame = $frameService->getFrameForPlayer($frameNumber, $playerId);
         $ballNumber = $frameService->getBallNumber($playerFrame->getId());
 
         // If we are on the first ball, then the player's strength will count
+        if ($ballNumber == Ball::FIRST) {
 
-        if($ballNumber == 1){
-            $droppedPins = rand($activePlayer->getStrength(), 10);
-        }else{
-            // Otherwise figure out what they threw the last time, and rand 0-n from the rest of the pins
-            $firstFramePins = $frameService->getPins($playerFrame->getId(), $ballNumber);
-            $droppedPins = rand(0, $firstFramePins);
+            $droppedPins = rand($activePlayer->getStrength(), Game::MAX_PINS);
+
+        } else { // Otherwise figure out what they threw the last time, and rand 0-n from the rest of the pins
+
+            $firstFramePins = $frameService->getPins($playerFrame->getId(), $ballNumber - 1);
+            $droppedPins = rand(0, Game::MAX_PINS - $firstFramePins);
         }
 
+        // Record the ball throw for this particular player's frame
         $frameService->throwBall($playerFrame->getId(), $ballNumber, $droppedPins);
 
         // Check to see if the player threw a strike, create another ball, with no pins dropped
-        if ($droppedPins == 10 && $ballNumber == 1) {
+        if ($droppedPins == Game::MAX_PINS && $ballNumber == Ball::FIRST) {
             $frameService->throwBall($playerFrame->getId(), $ballNumber, 0);
             $gameService->getNextPlayer();
         }
 
         // If this is the second ball, the player has completed their turn
-        if ($ballNumber == 2) {
+        if ($ballNumber == Ball::SECOND) {
             $gameService->getNextPlayer();
         }
 
-        // This is the last player, and their last ball, which means a new frame begins
-        if ($activePlayer->getId() == $gameService->getLastPlayerId() && $ballNumber == 2) {
-            $frameInc = $frameService->incrementFrame();
+        // This is the last player, and their last ball, which is the signal for the start of a new frame
+        if ($activePlayer->getId() == $gameService->getLastPlayerId() && $ballNumber == Ball::SECOND) {
+            $frameService->incrementFrame();
         }
 
         return $this->redirectToRoute('game_page');
@@ -141,7 +145,7 @@ class GameController extends Controller
 
     /**
      * End the game
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return RedirectResponse
      */
     public function logoutAction()
     {
