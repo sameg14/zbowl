@@ -50,6 +50,11 @@ class Frame
     private $isActive;
 
     /**
+     * @var Ball[]
+     */
+    private $balls = [];
+
+    /**
      * Get id
      *
      * @return int
@@ -153,6 +158,30 @@ class Frame
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * @return Ball[]
+     */
+    public function getBalls()
+    {
+        return $this->balls;
+    }
+
+    /**
+     * @param Ball[] $balls
+     */
+    public function setBalls($balls)
+    {
+        $this->balls = $balls;
+    }
+
+    /**
+     * @param Ball $ball
+     */
+    public function addBall(Ball $ball)
+    {
+        $this->balls[] = $ball;
     }
 }
 

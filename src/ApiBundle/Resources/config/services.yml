@@ -10,3 +10,7 @@ services:
     service.frame:
         class: ApiBundle\Service\FrameService
         arguments: ["@doctrine", "@session"]
+
+    service.score:
+        class: ApiBundle\Service\ScoreService
+        arguments: ["@doctrine", "@session"]

@@ -64,6 +64,7 @@ class GameController extends Controller
     {
         $frameService = $this->get('service.frame');
         $gameService = $this->get('service.game');
+        $scoreService = $this->get('service.score');
 
         $players = $gameService->getPlayers();
         $activePlayer = $gameService->getActivePlayer();
@@ -73,12 +74,15 @@ class GameController extends Controller
         $playerFrame = $frameService->getFrameForPlayer($frameNumber, $activePlayer->getId());
         $ballNumber = $frameService->getBallNumber($playerFrame->getId());
 
+        $scores = $scoreService->getScores();
+
         return $this->render('BowlingBundle:Game:main.ui.html.twig', [
             'lane' => $lane,
             'players' => $players,
             'activePlayer' => $activePlayer,
             'frameNumber' => $gameService->getFrameNumber(),
-            'ballNumber' => $ballNumber
+            'ballNumber' => $ballNumber,
+            'scores' => $scores
         ]);
     }
 
